@@ -15,3 +15,6 @@ antiAdvertising:
     banOnIpPost: true
     # If someone postes a url shall we ban them after a warning?
     banOnWeblinkPost: true
+    
+antiAnnoyances:
+    maxUppercaseLettersPerWord: 4
