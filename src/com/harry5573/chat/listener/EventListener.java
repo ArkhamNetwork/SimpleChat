@@ -72,6 +72,11 @@ public class EventListener implements Listener {
 
         // NICE LOOKING CHAT
         event.setMessage(capitalizeFirstLetter(event.getMessage()));
+        
+        // COLOR?
+        if (plugin.removeColorChat) {
+            event.setMessage(event.getMessage().replace("&", ""));
+        }
     }
 
     public String capitalizeFirstLetter(String original) {
