@@ -45,6 +45,7 @@ public class SimpleChatPlugin extends JavaPlugin {
     public boolean banOnIpPost = true;
     public boolean banOnWeblinkPost = true;
     public int maxUppercaseLettersPerWord = 0;
+    public boolean removeColorChat = true;
 
     public ConcurrentHashMap<String, String> swearWords = new ConcurrentHashMap<>();
     
@@ -85,7 +86,8 @@ public class SimpleChatPlugin extends JavaPlugin {
         this.blockDuplicateMessages = getConfig().getBoolean("antiSpam.blockDuplicateMessages");
         this.banOnIpPost = getConfig().getBoolean("antiAdvertising.banOnIpPost");
         this.banOnWeblinkPost = getConfig().getBoolean("antiAdvertising.banOnWeblinkPost");
-        this.maxUppercaseLettersPerWord = getConfig.getInt("antiAnnoyances.maxUppercaseLettersPerWord");
+        this.maxUppercaseLettersPerWord = getConfig().getInt("antiAnnoyances.maxUppercaseLettersPerWord");
+        this.removeColorChat = getConfig.getBoolean("removeColorChat");
     }
 
     public void handleAdvertisingAttempt(final Player p) {
