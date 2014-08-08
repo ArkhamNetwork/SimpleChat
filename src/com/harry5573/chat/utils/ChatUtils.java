@@ -110,6 +110,17 @@ public class ChatUtils {
 
         return placeHolderBuilder.toString();
     }
+    private static int getUppercaseCount(String word) {
+        int count = 0;
+        
+        for (int i = 0; i <= (word.length() - 1); i++) {
+            if (Character.isUppercase(word.charAt(i))) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
 
     public static String getFilteredSwearMessage(String message) {
         StringBuilder newMessage = new StringBuilder();
@@ -128,5 +139,22 @@ public class ChatUtils {
         }
 
         return newMessage.toString();
+    }
+    
+    public static String getFilteredUppercaseMessage(String message) {
+        StringBuilder newMessage = new StringBuilder();
+        
+        for (String word : message.split(" ")) {
+            if (newMessage.length() != 0) {
+                newMesssage.append(" ");
+            }
+            
+            if (getUppercaseCount(word) > plugin.maxUppercaseLettersPerWord) {
+                newMessage.append(word.toLowerCase());
+            }
+            else {
+                newMessage.append(word);
+            }
+        }
     }
 }
