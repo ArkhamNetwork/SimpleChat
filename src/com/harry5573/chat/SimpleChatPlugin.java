@@ -87,7 +87,7 @@ public class SimpleChatPlugin extends JavaPlugin {
         this.banOnIpPost = getConfig().getBoolean("antiAdvertising.banOnIpPost");
         this.banOnWeblinkPost = getConfig().getBoolean("antiAdvertising.banOnWeblinkPost");
         this.maxUppercaseLettersPerWord = getConfig().getInt("antiAnnoyances.maxUppercaseLettersPerWord");
-        this.removeColorChat = getConfig.getBoolean("removeColorChat");
+        this.removeColorChat = getConfig.getBoolean("colors.removeColorChat");
     }
 
     public void handleAdvertisingAttempt(final Player p) {
