@@ -62,13 +62,13 @@ public class EventListener implements Listener {
             return;
         }
 
-        // GOODBYE CAPITALS!
-        event.setMessage(event.getMessage().toLowerCase());
-
         // GOODBYE SWEARING
         if (plugin.blockSwearing) {
             event.setMessage(ChatUtils.getFilteredSwearMessage(event.getMessage()));
         }
+        
+        // NOT TOO MANY CAPITALS
+        event.setMessage(ChatUtils.getFilteredUppercaseMessage(event.getMessage()));
 
         // NICE LOOKING CHAT
         event.setMessage(capitalizeFirstLetter(event.getMessage()));
