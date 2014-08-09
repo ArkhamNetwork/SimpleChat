@@ -114,7 +114,7 @@ public class ChatUtils {
         int count = 0;
         
         for (int i = 0; i <= (word.length() - 1); i++) {
-            if (Character.isUppercase(word.charAt(i))) {
+            if (Character.isUpperCase(word.charAt(i))) {
                 count++;
             }
         }
@@ -146,7 +146,7 @@ public class ChatUtils {
         
         for (String word : message.split(" ")) {
             if (newMessage.length() != 0) {
-                newMesssage.append(" ");
+                newMessage.append(" ");
             }
             
             if (getUppercaseCount(word) > plugin.maxUppercaseLettersPerWord) {
@@ -156,5 +156,7 @@ public class ChatUtils {
                 newMessage.append(word);
             }
         }
+        
+        return newMessage.toString();
     }
 }
