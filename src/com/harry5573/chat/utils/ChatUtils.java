@@ -127,6 +127,11 @@ public class ChatUtils {
 
         for (String word : message.split(" ")) {
             //We do not want to break the first char.
+            if(word.length() <= 1){
+                newMessage.append(word);
+                continue; // Don't care.
+            }
+            
             if (newMessage.length() != 0) {
                 newMessage.append(" ");
             }

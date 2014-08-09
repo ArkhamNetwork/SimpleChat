@@ -21,9 +21,15 @@ public class ConfigurationUtils {
         HashMap<String, String> swearWords = new HashMap<>();
         Scanner scanner = new Scanner(plugin.getResource("swearWords.txt"));
 
-        while (scanner.hasNextLine()) {
-            swearWords.put(scanner.next().toLowerCase(), "Swear");
+        while (scanner.hasNext()) {
+            try{
+                swearWords.put(scanner.next().toLowerCase(), "Swear");
+            } catch(Exception err){
+                err.printStackTrace();
+            }
         }
+
+        scanner.close();
         return swearWords;
     }
 
