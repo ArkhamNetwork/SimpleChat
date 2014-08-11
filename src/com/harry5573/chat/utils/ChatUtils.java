@@ -24,9 +24,9 @@ public class ChatUtils {
             for (int i = 0; i < 75; i++) {
                 player.sendMessage(" ");
             }
-            player.sendMessage(ChatColor.RED + "â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ª");
+            player.sendMessage(ChatColor.RED + "««««««««««««««««««««««««««««««««");
             player.sendMessage(ChatColor.GREEN + "The chat has been cleared by " + ChatColor.YELLOW + whoCleared.getName());
-            player.sendMessage(ChatColor.RED + "â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ª");
+            player.sendMessage(ChatColor.RED + "««««««««««««««««««««««««««««««««");
         }
         whoCleared.sendMessage(plugin.prefix + ChatColor.GREEN + " You have cleared the chat.");
     }
@@ -39,9 +39,9 @@ public class ChatUtils {
                 for (int i = 0; i < 75; i++) {
                     player.sendMessage(" ");
                 }
-                player.sendMessage(ChatColor.RED + "â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ª");
+                player.sendMessage(ChatColor.RED + "««««««««««««««««««««««««««««««««");
                 player.sendMessage(ChatColor.GREEN + "The chat has been disabled by " + ChatColor.YELLOW + whoToggled.getName());
-                player.sendMessage(ChatColor.RED + "â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ª");
+                player.sendMessage(ChatColor.RED + "««««««««««««««««««««««««««««««««");
             }
             whoToggled.sendMessage(plugin.prefix + ChatColor.RED + " You have toggled the chat OFF.");
         } else {
@@ -51,9 +51,9 @@ public class ChatUtils {
                 for (int i = 0; i < 75; i++) {
                     player.sendMessage(" ");
                 }
-                player.sendMessage(ChatColor.DARK_GREEN + "â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ª");
+                player.sendMessage(ChatColor.RED + "««««««««««««««««««««««««««««««««");
                 player.sendMessage(ChatColor.GREEN + "The chat has been enabled by " + ChatColor.YELLOW + whoToggled.getName());
-                player.sendMessage(ChatColor.DARK_GREEN + "â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™ªâ™«â™«â™ªâ™«â™ª");
+                player.sendMessage(ChatColor.RED + "««««««««««««««««««««««««««««««««");
             }
             whoToggled.sendMessage(plugin.prefix + ChatColor.GREEN + " You have toggled the chat ON.");
         }
@@ -127,15 +127,15 @@ public class ChatUtils {
 
         for (String word : message.split(" ")) {
             //We do not want to break the first char.
+            if (newMessage.length() != 0) {
+                newMessage.append(" ");
+            }
+
             if(word.length() <= 1){
                 newMessage.append(word);
                 continue; // Don't care.
             }
             
-            if (newMessage.length() != 0) {
-                newMessage.append(" ");
-            }
-
             if (plugin.swearWords.get(word.toLowerCase()) != null && plugin.swearWords.get(word.toLowerCase()).equals("Swear")) {
                 newMessage.append(buildPlaceholders(word.length(), "*"));
             } else {
