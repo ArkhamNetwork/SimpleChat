@@ -3,7 +3,7 @@ description: Simple chat cleaning plugin!
 version: 2.0
 authors: [harry5573]
 website: www.harry5573.co.uk
-main: com.harry5573.chat.SimpleChatPlugin
+main: com.harry5573.simplechat.SimpleChatPlugin
 commands:
   simplechat:
     description: Main plugin command

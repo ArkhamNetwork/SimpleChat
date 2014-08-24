@@ -5,19 +5,15 @@ prefix: '&8[&cArkhamChat&8]'
 websiteURL: 'www.arkhamnetwork.org'
 
 blockSwearing: true
+removeColors: true
 
 antiSpam:
     blockChatUntilPlayerMoved: true
     blockDuplicateMessages: true
+    maxUppercaseLettersPerWord: 4
 
 antiAdvertising:
     # If someone postes an ip shall we ban them after a warning?
     banOnIpPost: true
     # If someone postes a url shall we ban them after a warning?
     banOnWeblinkPost: true
-    
-antiAnnoyances:
-    maxUppercaseLettersPerWord: 4
-
-colors:
-    removeColorChat: true

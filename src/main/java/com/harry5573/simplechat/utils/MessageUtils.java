@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.harry5573.chat.utils;
+package com.harry5573.simplechat.utils;
 
 import org.bukkit.ChatColor;
 
@@ -13,8 +13,8 @@ import org.bukkit.ChatColor;
  */
 public class MessageUtils {
 
-    public static String translateToColorCode(String msg) {
-        return ChatColor.translateAlternateColorCodes('&', msg);
-    }
+      public static String translateToColorCode(String msg) {
+            return ChatColor.translateAlternateColorCodes('&', msg);
+      }
 
 }
