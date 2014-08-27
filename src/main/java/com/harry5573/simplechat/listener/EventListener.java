@@ -71,12 +71,12 @@ public class EventListener implements Listener {
                   return;
             }
 
-            if (plugin.blockSwearing) {
-                  event.setMessage(ChatUtils.getFilteredSwearMessage(event.getMessage()));
-            }
-
             if (plugin.removeColors) {
                   event.setMessage(ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', event.getMessage())));
+            }
+            
+            if (plugin.blockSwearing) {
+                  event.setMessage(ChatUtils.getFilteredSwearMessage(event.getMessage()));
             }
 
             if (!ChatUtils.checkMessageForWebPattern(event.getMessage())) {
