@@ -96,15 +96,14 @@ public class SimpleChatPlugin extends JavaPlugin {
                   getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
                         @Override
                         public void run() {
-                              Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tempban " + p.getName() + " 1month Autoban for advertising appeal at " + websiteURL + ".");
-                              Bukkit.broadcastMessage(prefix + ChatColor.RED + " " + p.getName() + " has been auto-banned for attempting to advertise!");
+                              Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tempmute " + p.getName() + " 7d Automatically muted for 1 week.");
+                              Bukkit.broadcastMessage(prefix + ChatColor.RED + " " + p.getName() + " has been auto-muted for attempting to advertise!");
                         }
                   }, 1L);
             } else {
                   p.sendMessage(prefix + ChatColor.DARK_RED + " " + ChatColor.BOLD + "*****************************");
                   p.sendMessage(prefix + ChatColor.RED + " Your last message was flagged as possible advertising!");
-                  p.sendMessage(prefix + ChatColor.RED + " Do not talk again for 1 MINUTE or you will be banned.");
-                  p.sendMessage(prefix + ChatColor.RED + " We will tell you when you can talk again.");
+                  p.sendMessage(prefix + ChatColor.RED + " Do not chat any links for 1 minute or you will be muted.");
                   p.sendMessage(prefix + ChatColor.DARK_RED + " " + ChatColor.BOLD + "*****************************");
                   flaggedAdvertisers.add(uniqueID);
 
@@ -113,7 +112,7 @@ public class SimpleChatPlugin extends JavaPlugin {
                         public void run() {
                               if (p.isOnline()) {
                                     p.sendMessage(prefix + ChatColor.DARK_RED + " " + ChatColor.BOLD + "*****************************");
-                                    p.sendMessage(prefix + ChatColor.GREEN + " You can now talk again!");
+                                    p.sendMessage(prefix + ChatColor.GREEN + " You can now chat safely again!");
                                     p.sendMessage(prefix + ChatColor.DARK_RED + " " + ChatColor.BOLD + "*****************************");
                               }
                               plugin.flaggedAdvertisers.remove(uniqueID);
