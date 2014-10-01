@@ -13,7 +13,7 @@ antiSpam:
     maxUppercaseLettersPerWord: 4
 
 antiAdvertising:
-    # If someone postes an ip shall we ban them after a warning?
+    # If someone postes an ip shall we mute them after a warning?
     punishOnIpPost: true
-    # If someone postes a url shall we ban them after a warning?
+    # If someone postes a url shall we mute them after a warning?
     punishOnWeblinkPost: true
