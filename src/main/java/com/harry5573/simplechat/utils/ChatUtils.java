@@ -60,13 +60,13 @@ public class ChatUtils {
       }
 
       public static boolean checkMessageForAdvertising(String message) {
-            if (plugin.banOnIpPost) {
+            if (plugin.punishOnIpPost) {
                   if (checkMessageForIP(message) == true) {
                         return true;
                   }
             }
 
-            if (plugin.banOnWeblinkPost) {
+            if (plugin.punishOnWeblinkPost) {
                   if (checkMessageForWebPattern(message) == true) {
                         return true;
                   }
