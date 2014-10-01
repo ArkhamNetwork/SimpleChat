@@ -39,8 +39,8 @@ public class SimpleChatPlugin extends JavaPlugin {
       public boolean blockSwearing = true;
       public boolean blockChatUntilPlayerMoved = true;
       public boolean blockDuplicateMessages = true;
-      public boolean banOnIpPost = true;
-      public boolean banOnWeblinkPost = true;
+      public boolean punishOnIpPost = true;
+      public boolean punishOnWeblinkPost = true;
       public int maxUppercaseLettersPerWord = 0;
       public boolean removeColors = true;
 
@@ -80,8 +80,8 @@ public class SimpleChatPlugin extends JavaPlugin {
             this.blockSwearing = getConfig().getBoolean("blockSwearing");
             this.blockChatUntilPlayerMoved = getConfig().getBoolean("antiSpam.blockChatUntilPlayerMoved");
             this.blockDuplicateMessages = getConfig().getBoolean("antiSpam.blockDuplicateMessages");
-            this.banOnIpPost = getConfig().getBoolean("antiAdvertising.banOnIpPost");
-            this.banOnWeblinkPost = getConfig().getBoolean("antiAdvertising.banOnWeblinkPost");
+            this.punishOnIpPost = getConfig().getBoolean("antiAdvertising.punishOnIpPost");
+            this.punishOnWeblinkPost = getConfig().getBoolean("antiAdvertising.punishOnWeblinkPost");
             this.maxUppercaseLettersPerWord = getConfig().getInt("antiSpam.maxUppercaseLettersPerWord");
             this.removeColors = getConfig().getBoolean("removeColors");
 
