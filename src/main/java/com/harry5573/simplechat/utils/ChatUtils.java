@@ -5,10 +5,15 @@
  */
 package com.harry5573.simplechat.utils;
 
-import com.harry5573.simplechat.SimpleChatPlugin;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
+
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+
+import com.harry5573.simplechat.SimpleChatPlugin;
 
 /**
  *
@@ -19,14 +24,13 @@ public class ChatUtils {
       private static SimpleChatPlugin plugin = SimpleChatPlugin.getPlugin();
 
       public static void clearChat(Player whoCleared) {
-            final Player[] onlinePlayers = plugin.getServer().getOnlinePlayers();
-            for (Player player : onlinePlayers) {
+            for (Player player : Bukkit.getOnlinePlayers()) {
                   for (int i = 0; i < 75; i++) {
                         player.sendMessage(" ");
                   }
-                  player.sendMessage(ChatColor.RED + "♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪");
-                  player.sendMessage(ChatColor.GREEN + "The chat has been cleared by " + ChatColor.YELLOW + whoCleared.getName());
-                  player.sendMessage(ChatColor.RED + "♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪");
+                  player.sendMessage(ChatColor.YELLOW + "=============================================================================================================================================================================================");
+                  player.sendMessage(ChatColor.GRAY + "The chat has been " + ChatColor.AQUA + ChatColor.UNDERLINE + "cleared" + ChatColor.GRAY + " by " + ChatColor.YELLOW + whoCleared.getName());
+                  player.sendMessage(ChatColor.YELLOW + "=============================================================================================================================================================================================");
             }
             whoCleared.sendMessage(plugin.prefix + ChatColor.GREEN + " You have cleared the chat.");
       }
@@ -34,26 +38,24 @@ public class ChatUtils {
       public static void toggleChat(Player whoToggled) {
             if (!plugin.isChatHalted) {
                   plugin.isChatHalted = true;
-                  final Player[] onlinePlayers = plugin.getServer().getOnlinePlayers();
-                  for (Player player : onlinePlayers) {
+                  for (Player player : Bukkit.getOnlinePlayers()) {
                         for (int i = 0; i < 75; i++) {
                               player.sendMessage(" ");
                         }
-                        player.sendMessage(ChatColor.RED + "♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪");
-                        player.sendMessage(ChatColor.GREEN + "The chat has been disabled by " + ChatColor.YELLOW + whoToggled.getName());
-                        player.sendMessage(ChatColor.RED + "♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪");
+                        player.sendMessage(ChatColor.YELLOW + "=============================================================================================================================================================================================");
+                        player.sendMessage(ChatColor.GRAY + "The chat has been " + ChatColor.RED + ChatColor.UNDERLINE + "disabled" + ChatColor.GRAY + " by " + ChatColor.YELLOW + whoToggled.getName());
+                        player.sendMessage(ChatColor.YELLOW + "=============================================================================================================================================================================================");
                   }
                   whoToggled.sendMessage(plugin.prefix + ChatColor.RED + " You have toggled the chat OFF.");
             } else {
                   plugin.isChatHalted = false;
-                  final Player[] onlinePlayers = plugin.getServer().getOnlinePlayers();
-                  for (Player player : onlinePlayers) {
+                  for (Player player : Bukkit.getOnlinePlayers()) {
                         for (int i = 0; i < 75; i++) {
                               player.sendMessage(" ");
                         }
-                        player.sendMessage(ChatColor.DARK_GREEN + "♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪");
-                        player.sendMessage(ChatColor.GREEN + "The chat has been enabled by " + ChatColor.YELLOW + whoToggled.getName());
-                        player.sendMessage(ChatColor.DARK_GREEN + "♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪♫♪♫♪♫♪♫♪♫♪♫♫♪♫♪");
+                        player.sendMessage(ChatColor.YELLOW + "=============================================================================================================================================================================================");
+                        player.sendMessage(ChatColor.GRAY + "The chat has been " + ChatColor.GREEN + ChatColor.UNDERLINE + "enabled" + ChatColor.GRAY + " by " + ChatColor.YELLOW + whoToggled.getName());
+                        player.sendMessage(ChatColor.YELLOW + "=============================================================================================================================================================================================");
                   }
                   whoToggled.sendMessage(plugin.prefix + ChatColor.GREEN + " You have toggled the chat ON.");
             }
@@ -136,14 +138,39 @@ public class ChatUtils {
                         continue;
                   }
 
-                  if (plugin.swearWords.get(word.toLowerCase()) != null && plugin.swearWords.get(word.toLowerCase()).equals("Swear")) {
-                        newMessage.append(buildPlaceholders(word.length(), "*"));
+                  if (isSwearWord(word.toLowerCase())) {
+                        newMessage.append(buildPlaceholders(getRemovedDelimeters(word).length(), "*"));
                   } else {
                         newMessage.append(word);
                   }
             }
 
             return newMessage.toString();
+      }
+      
+      public static boolean isSwearWord(String word) {
+    	  /* BASIC CHECK */
+    	  if (plugin.swearWords.get(word.toLowerCase()) != null) return true;
+    	  
+    	  /* CONTAINS CHECK */
+    	  for (String sw : plugin.swearWords.keySet())
+    		  if (word.contains(sw)) return true;
+    	  
+    	  /* DELIMETER REDUCTION CHECK */
+    	  String noDelimeterWord = getRemovedDelimeters(word);
+    	  for (String sw : plugin.swearWords.keySet())
+    		  if (noDelimeterWord.contains(sw)) return true;
+    	  
+    	  return false;
+      }
+      
+      public static String getRemovedDelimeters(String string) {
+    	  List<Character> delimeters = Arrays.asList('.', ',', ';', ':', '-', '_', '|', '/', '?', '(', ')', '!', '@', '#', '4', '5', '6', '7', '8', '9', '0', '`', '~', '+', '<', '>');
+    	  String noDelimeterWord = "";
+    	  for (char c : string.toCharArray())
+    		  if (!delimeters.contains(c)) noDelimeterWord = noDelimeterWord + c;
+    	  
+    	  return noDelimeterWord;
       }
 
       public static String getFilteredUppercaseMessage(String message) {

@@ -37,7 +37,7 @@ public class EventListener implements Listener {
             }
 
             if (plugin.blockChatUntilPlayerMoved && plugin.hasntMoved.contains(player.getUniqueId())) {
-                  player.sendMessage(plugin.prefix + ChatColor.RED + " You cannot chat until you have moved!");
+                  player.sendMessage(plugin.prefix + ChatColor.RED + " You may not chat until you have moved!");
                   event.setCancelled(true);
                   return;
             }

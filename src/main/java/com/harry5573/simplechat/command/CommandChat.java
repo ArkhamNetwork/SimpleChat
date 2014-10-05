@@ -19,7 +19,7 @@ public class CommandChat implements CommandExecutor {
       @Override
       public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
             if (!(sender instanceof Player)) {
-                  plugin.logMessage("That is not a console command.");
+                  plugin.logMessage("That command is not usable in console.");
                   return true;
             }
             Player player = (Player) sender;

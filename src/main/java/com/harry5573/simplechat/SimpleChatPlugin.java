@@ -19,7 +19,6 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @author Harry5573
  */
 public class SimpleChatPlugin extends JavaPlugin {
-
       @Getter
       private static SimpleChatPlugin plugin;
 
@@ -112,7 +111,7 @@ public class SimpleChatPlugin extends JavaPlugin {
                         public void run() {
                               if (p.isOnline()) {
                                     p.sendMessage(prefix + ChatColor.DARK_RED + " " + ChatColor.BOLD + "*****************************");
-                                    p.sendMessage(prefix + ChatColor.GREEN + " You can now chat safely again!");
+                                    p.sendMessage(prefix + ChatColor.GREEN + " You may now chat safely again!");
                                     p.sendMessage(prefix + ChatColor.DARK_RED + " " + ChatColor.BOLD + "*****************************");
                               }
                               plugin.flaggedAdvertisers.remove(uniqueID);
